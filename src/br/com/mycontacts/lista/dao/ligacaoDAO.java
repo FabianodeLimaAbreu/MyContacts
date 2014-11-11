@@ -12,7 +12,7 @@ import br.com.mycontacts.lista.modelo.Contato;
 
 
 public class ligacaoDAO extends SQLiteOpenHelper {
-	private static final String DATABASE = "registroDB";
+	private static final String DATABASE = "Lista de Contatos";
 	private static final int VERSAO = 1;
 
 	public ligacaoDAO(Context context) {

@@ -9,9 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 import br.com.mycontacts.Formulario;
-import br.com.mycontacts.ListaContatos;
 import br.com.mycontacts.lista.modelo.Contato;
 
 

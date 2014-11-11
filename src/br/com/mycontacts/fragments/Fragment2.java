@@ -7,6 +7,7 @@ import br.com.mycontacts.Formulario;
 import br.com.mycontacts.R;
 import br.com.mycontacts.externals.SearchFiltro;
 import br.com.mycontacts.lista.dao.ContatoDAO;
+import br.com.mycontacts.lista.dao.ligacaoDAO;
 import br.com.mycontacts.lista.modelo.Contato;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -106,6 +107,8 @@ public class Fragment2 extends Fragment {
 					//Precisamos informar p/ que num queremos ligar.
 					//Precimos colocar a permissão no Manifest para fazer uma ligação
 				Uri discarPara = Uri.parse("tel: " + contatoLigar.getTelefone());
+				ligacaoDAO daoLigacao = new ligacaoDAO(getActivity()); 
+                daoLigacao.salva(contatoLigar); //Salvando conteúdo
 				irParaTelaDeDiscagem.setData(discarPara);
 						
 				startActivity(irParaTelaDeDiscagem);

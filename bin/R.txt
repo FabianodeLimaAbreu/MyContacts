@@ -488,6 +488,7 @@ int string title_activity_tes 0x7f0a0013
 int string title_activity_teste 0x7f0a000f
 int string title_activity_uhu 0x7f0a0016
 int string title_activity_uia 0x7f0a0014
+int string title_activity_uu 0x7f0a001a
 int style ActionBar_Solid_Actionbartema 0x7f0b008c
 int style ActionBar_Solid_Examplebartheme 0x7f0b0098
 int style ActionBar_Solid_Mycontacts 0x7f0b00a2

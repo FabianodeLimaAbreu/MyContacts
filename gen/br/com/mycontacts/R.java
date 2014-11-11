@@ -1390,6 +1390,7 @@ containing a value of this type.
         public static final int title_activity_teste=0x7f0a000f;
         public static final int title_activity_uhu=0x7f0a0016;
         public static final int title_activity_uia=0x7f0a0014;
+        public static final int title_activity_uu=0x7f0a001a;
     }
     public static final class style {
         public static final int ActionBar_Solid_Actionbartema=0x7f0b008c;
