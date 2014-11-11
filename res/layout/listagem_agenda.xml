@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+>
+
+    <!-- Item de menu com @+id/search foi criado diretamente na classe ListaContatos -->
+    
+	<!-- match_parent: maior espaço possível
+		 wrap_content: menor espaço possível -->
+    <ListView  
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lista"
+        ></ListView>
+</LinearLayout>

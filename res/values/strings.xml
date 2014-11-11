@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My Contacts</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_teste">TesteActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_historico">Historico</string>
+    <string name="title_activity_tes">Tes</string>
+    <string name="title_activity_uia">Uia</string>
+    <string name="title_activity_ha">Ha</string>
+    <string name="title_activity_uhu">Uhu</string>
+    <string name="title_activity_oi">Oi</string>
+    <string name="title_activity_hum">Hum</string>
+    <string name="title_activity_si">Si</string>
+
+</resources>
