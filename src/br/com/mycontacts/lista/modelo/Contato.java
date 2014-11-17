@@ -6,6 +6,8 @@ public class Contato implements Serializable{
 	private Long id;
 	private String nome, telefone, email, endereco, foto, horaLigacao;
 	int operadora;
+	private int tipoendereco;
+	private int tipoemail;
 	private Double favorito;
 	
 	@Override
@@ -70,5 +72,21 @@ public class Contato implements Serializable{
 
 	public void setOperadora(int operadora) {
 		this.operadora = operadora;
+	}
+
+	public int getTipoendereco() {
+		return tipoendereco;
+	}
+
+	public void setTipoendereco(int tipoendereco) {
+		this.tipoendereco = tipoendereco;
+	}
+
+	public int getTipoemail() {
+		return tipoemail;
+	}
+
+	public void setTipoemail(int tipoemail) {
+		this.tipoemail = tipoemail;
 	}
 }

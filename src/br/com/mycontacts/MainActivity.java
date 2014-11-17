@@ -1,7 +1,7 @@
 package br.com.mycontacts;
 
-import br.com.mycontacts.fragments.Fragment1;
 import br.com.mycontacts.fragments.Fragment2;
+import br.com.mycontacts.fragments.Fragment1;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -29,8 +29,8 @@ public class MainActivity extends FragmentActivity {
 		ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		//TAB1
 		android.app.ActionBar.Tab tab1=ab.newTab();
-		tab1.setIcon(R.drawable.ic_action_time);
-		tab1.setTag("Historico de Ligacoes");
+		tab1.setIcon(R.drawable.ic_action_group);
+		tab1.setTag("Contatos");
 		//Uma instancia de uma classe que implementa actionbar tablistener
 		//Como parametro de entrada um construtor: UsM fragment vai ser vinculado a esta Tab
 		tab1.setTabListener((TabListener) new NavegacaoTabs(new Fragment1()));
@@ -39,8 +39,8 @@ public class MainActivity extends FragmentActivity {
 		
 		//TAB2
 		android.app.ActionBar.Tab tab2=ab.newTab();
-		tab2.setIcon(R.drawable.ic_action_group);
-		tab2.setTag("Contatos");
+		tab2.setIcon(R.drawable.ic_action_time);
+		tab2.setTag("Historico de Ligacoes");
 		//Uma instancia de uma classe que implementa actionbar tablistener
 		//Como parametro de entrada um construtor: UM fragment vai ser vinculado a esta Tab
 		tab2.setTabListener((TabListener) new NavegacaoTabs(new Fragment2()));
@@ -85,7 +85,6 @@ public class MainActivity extends FragmentActivity {
 			if(tab.getPosition() == 0){
 				//Caso a tab selecionada seja a inicial (Historico), desabilita o botão voltar via logo
 				ab.setDisplayHomeAsUpEnabled(false);
-				Log.i("scripts","CHEGOU AQUI OLHA"+tab.getPosition());
 			}
 			else{
 				ab.setDisplayHomeAsUpEnabled(true);
