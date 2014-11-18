@@ -31,6 +31,7 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 
@@ -152,7 +153,18 @@ public class Fragment1 extends Fragment {
 			}
 		});
 		
-		menu.add("Enviar SMS");
+		MenuItem sms=menu.add("Enviar SMS");
+		sms.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			
+			@Override
+			public boolean onMenuItemClick(MenuItem item) {
+				// TODO Auto-generated method stub
+				Intent irParaSMS = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:"+contato.getTelefone()));
+				startActivity(irParaSMS);
+				return false;
+			}
+		});
+		
 		MenuItem deletar = menu.add("Deletar");
 		deletar.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			
