@@ -5,6 +5,12 @@ import java.io.Serializable;
 public class Ligacao implements Serializable{
 	private Long id;
 	private String nome;
+
+	@Override
+	public String toString() {
+		return nome;
+	}
+	
 	public Long getId() {
 		return id;
 	}
