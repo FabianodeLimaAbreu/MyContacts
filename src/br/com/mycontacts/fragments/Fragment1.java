@@ -211,23 +211,7 @@ public class Fragment1 extends Fragment {
 			}
 		});
 		
-		MenuItem email=menu.add("Enviar e-mail");
-		email.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-			@Override
-			public boolean onMenuItemClick(MenuItem arg0) {
-				Intent i = new Intent(Intent.ACTION_SEND);
-				i.setType("message/rfc822");
-				i.putExtra(Intent.EXTRA_EMAIL  , new String[]{contato.getEmail()});
-				/*i.putExtra(Intent.EXTRA_SUBJECT, "");
-				i.putExtra(Intent.EXTRA_TEXT   , "body of email");*/
-				try {
-				    startActivity(Intent.createChooser(i, "Enviar email com: "));
-				} catch (android.content.ActivityNotFoundException ex) {
-				    Toast.makeText(getActivity(), "O contato não possui email cadastrado!", Toast.LENGTH_SHORT).show();
-				}
-				return false;
-			}
-		});
+		menu.add("Enviar e-mail");
 		menu.add("Ver no mapa");
 		
 		super.onCreateContextMenu(menu, v, menuInfo);
