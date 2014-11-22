@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,13 +32,18 @@ import br.com.mycontacts.lista.modelo.Contato;
 	private Contato contatoAlterar;
 	
 	private Contato contato;
-	private ContatoDAO dao; 
+	private ContatoDAO dao;
+	private ImageButton botao; 
+	private boolean i;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		//setContentView é o método mais importante da activity.
 		//Ele vincula a Activity Formulario com o layout formulario.xml
 		setContentView(R.layout.formulario);
+		
+		
 		
 		//Para botão de voltar no logo
 		android.app.ActionBar ab=getActionBar();
@@ -51,15 +57,8 @@ import br.com.mycontacts.lista.modelo.Contato;
 		//Extrair o codigo em uma classe separada, para evitar que a Activity cresça demais.
 		helper = new FormularioHelper(this);
 		
-		//Agora que todas as Views estão buscadas,devemos colocar dentro de um contato
-		ImageButton botao = (ImageButton) findViewById(R.id.botao);
+		botao = (ImageButton) findViewById(R.id.botao);
 
-		if(contatoMostrar != null){
-			botao.setVisibility(View.INVISIBLE);				
-			helper.colocaContatoNoFormulario(contatoMostrar, "contatoMostrar");
-		} else if (contatoAlterar != null) {
-			helper.colocaContatoNoFormulario(contatoAlterar, "contatoAlterar");
-		}
 		botao.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -104,6 +103,17 @@ import br.com.mycontacts.lista.modelo.Contato;
 		});
 	}
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if(contatoMostrar != null){
+			botao.setVisibility(View.INVISIBLE);				
+			helper.colocaContatoNoFormulario(contatoMostrar, "contatoMostrar");
+		} else if (contatoAlterar != null) {
+			helper.colocaContatoNoFormulario(contatoAlterar, "contatoAlterar");
+		}
+	}
+			
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		/*Para saber se estamos voltando da chamada da camera comparamos o requestCode == 123*/
@@ -170,8 +180,8 @@ import br.com.mycontacts.lista.modelo.Contato;
 				contato = helper.pegaContatoDoFormulario();
 				
 				irParaFormulario.putExtra("contatoAlterar", contato);
-				startActivity(irParaFormulario);				
-				
+				startActivity(irParaFormulario);		
+
 				break;
 			default:
 				break;
