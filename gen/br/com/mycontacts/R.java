@@ -1385,6 +1385,7 @@ containing a value of this type.
         public static final int title_activity_ha=0x7f0a0015;
         public static final int title_activity_historico=0x7f0a0012;
         public static final int title_activity_hum=0x7f0a0018;
+        public static final int title_activity_iou=0x7f0a001e;
         public static final int title_activity_main=0x7f0a0011;
         public static final int title_activity_oi=0x7f0a0017;
         public static final int title_activity_ooj=0x7f0a001d;

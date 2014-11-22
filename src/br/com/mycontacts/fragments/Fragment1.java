@@ -211,7 +211,23 @@ public class Fragment1 extends Fragment {
 			}
 		});
 		
-		menu.add("Enviar e-mail");
+		MenuItem email=menu.add("Enviar e-mail");
+		email.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			@Override
+			public boolean onMenuItemClick(MenuItem item) {
+				Intent i = new Intent(Intent.ACTION_SEND);
+				i.setType("message/rfc822");
+				i.putExtra(Intent.EXTRA_EMAIL  , new String[]{contato.getEmail()});
+				/*i.putExtra(Intent.EXTRA_SUBJECT, "");
+				i.putExtra(Intent.EXTRA_TEXT   , "body of email");*/
+				try {
+					startActivity(Intent.createChooser(i, "Enviar email com: "));
+				} catch (Exception e) {
+					Toast.makeText(getActivity(), "O contato não possui email cadastrado!",Toast.LENGTH_SHORT).show();
+				}
+				return false;
+			}
+		});
 		menu.add("Ver no mapa");
 		
 		super.onCreateContextMenu(menu, v, menuInfo);
