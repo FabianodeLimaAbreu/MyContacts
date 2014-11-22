@@ -166,7 +166,11 @@ import br.com.mycontacts.lista.modelo.Contato;
 			    ad.show();
 				break;
 			case R.id.editar:
-				//Este vai ser o editar
+				Intent irParaFormulario = new Intent(this, Formulario.class);
+				contato = helper.pegaContatoDoFormulario();
+				
+				irParaFormulario.putExtra("contatoAlterar", contato);
+				startActivity(irParaFormulario);				
 				
 				break;
 			default:
