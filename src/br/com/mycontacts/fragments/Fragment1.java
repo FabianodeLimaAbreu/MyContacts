@@ -5,6 +5,7 @@ import java.util.List;
 
 import br.com.mycontacts.Formulario;
 import br.com.mycontacts.R;
+import br.com.mycontacts.externals.ListaContatosAdapter;
 import br.com.mycontacts.externals.SearchFiltro;
 import br.com.mycontacts.lista.dao.ContatoDAO;
 import br.com.mycontacts.lista.dao.ligacaoDAO;
@@ -247,12 +248,10 @@ public class Fragment1 extends Fragment {
         dao.close();
 
         //Aparencia
-        int layout = android.R.layout.simple_list_item_1;
        // Log.i("LISTA", ""+contatos.get(0).getNome());
         //Transforma as string p/ uma View, quem faz isso é o Adapter
         //Log.i("ADAPTER", ""+contatos.get(0));
-        ArrayAdapter<Contato> adapter = new ArrayAdapter<Contato>(getActivity(), layout, contatos);
-
+        ListaContatosAdapter adapter = new ListaContatosAdapter(contatos,this.getActivity());
         //Colocando as string dos nomes nas linhas da ListView
         lista.setAdapter(adapter);
 	}

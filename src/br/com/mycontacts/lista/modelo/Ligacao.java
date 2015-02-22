@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Ligacao implements Serializable{
 	private Long id;
-	private String nome;
+	private String nome,telefone;
 	
 	@Override
 	public String toString() {
@@ -22,5 +22,13 @@ public class Ligacao implements Serializable{
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 }

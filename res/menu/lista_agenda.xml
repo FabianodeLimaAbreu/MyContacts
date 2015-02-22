@@ -14,5 +14,17 @@
         android:showAsAction="always"
         android:title="Novo"
         android:icon="@drawable/ic_action_user_add"/>
+    <item 
+        android:title="overflow"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_action_overflow">
+	   	<menu>
+	   	    <item
+	   	        android:id="@+id/settings"
+	   	        android:title="Configurações"
+	   	        android:icon="@drawable/ic_action_settings"
+	   	        android:showAsAction="always"/>
+	   	</menu>
+	</item>
         	                
 </menu>

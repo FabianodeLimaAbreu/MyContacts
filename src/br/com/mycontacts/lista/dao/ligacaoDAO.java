@@ -27,19 +27,19 @@ public class ligacaoDAO extends SQLiteOpenHelper {
 		//Contato dados = new Contato();
 		values.put("idContato", registroChamada.getId());
 		values.put("nome", registroChamada.getNome());
-		Log.i("SCRIPT", "SALVOU ESSSA BIROSCA 1"+registroChamada.getNome() );
+		values.put("telefone", registroChamada.getTelefone());
+		Log.i("SCRIPT", "SALVOU ESSSA BIROSCA 1"+registroChamada.getTelefone() );
 		//values.put("hora", dados.getHoraLigacao());
 		//values.put("operadora", dados.getOperadora());
 
 		getWritableDatabase().insert("Ligacoes", null, values);
-		Log.i("TAG", "SALVOU ESSSA BIROSCA : "+values.get("nome"));
 
 	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		String ddl = "CREATE TABLE Ligacoes (id INTEGER PRIMARY KEY AUTOINCREMENT, "
-				+ "idContato INT, nome TEXT NOT NULL);";
+				+ "idContato INT, nome TEXT NOT NULL, telefone TEXT);";
 		db.execSQL(ddl);
 
 	}
@@ -52,7 +52,7 @@ public class ligacaoDAO extends SQLiteOpenHelper {
 	}
 
 	public List<Ligacao> getListaLigacao() {
-		String[] colunas = { "id", "nome"};
+		String[] colunas = { "id", "nome","telefone"};
 		Cursor cursor = getWritableDatabase().query("Ligacoes", colunas, null,
 				null, null, null, null);
 
@@ -62,8 +62,9 @@ public class ligacaoDAO extends SQLiteOpenHelper {
 			Ligacao ligacao = new Ligacao();
 
 			ligacao.setId(cursor.getLong(0));
-			Log.i("CURSOR", cursor.getString(0));
 			ligacao.setNome(cursor.getString(1));
+			ligacao.setTelefone(cursor.getString(2));
+			Log.i("CURSOR", ligacao.getTelefone());
 			//ligacao.setHoraLigacao(cursor.getString(3));
 			//ligacao.setOperadora(cursor.getString(4));
 			ligacoes.add(ligacao);
