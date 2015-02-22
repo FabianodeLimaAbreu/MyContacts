@@ -7,6 +7,8 @@ import br.com.mycontacts.lista.dao.ContatoDAO;
 import br.com.mycontacts.lista.dao.ligacaoDAO;
 import br.com.mycontacts.lista.modelo.Contato;
 import br.com.mycontacts.lista.modelo.Ligacao;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -16,6 +18,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -34,6 +38,24 @@ public class Fragment2 extends Fragment {
     public void onResume() {
     	super.onResume();
     	history = (ListView) getView().findViewById(R.id.historico);
+    	history.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> adapter, View view,int posicao, long id) {
+				// TODO Auto-generated method stub
+				/*Ligacao contatoLigar = (Ligacao) adapter.getItemAtPosition(posicao);
+				Contato registroChamada = (Contato) adapter.getItemAtPosition(posicao);
+				
+				Intent irParaTelaDeDiscagem = new Intent(Intent.ACTION_CALL);
+				Uri discarPara = Uri.parse("tel: " + contatoLigar.getTelefone());
+				
+				ligacaoDAO daoLigacao = new ligacaoDAO(getActivity()); 
+				daoLigacao.salva(registroChamada); //Salvando conteúdo
+				
+				irParaTelaDeDiscagem.setData(discarPara);
+				startActivity(irParaTelaDeDiscagem);*/
+			}
+		});
     	carregaListaLigacoes();
     }
 	

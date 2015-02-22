@@ -15,10 +15,20 @@
         android:title="Novo"
         android:icon="@drawable/ic_action_user_add"/>
     <item 
+        android:id="@+id/map"
+        android:showAsAction="always"
+        android:title="Contatos no mapa"
+        android:icon="@drawable/ic_location_map"/>
+    <item 
         android:title="overflow"
         android:showAsAction="always"
         android:icon="@drawable/ic_action_overflow">
 	   	<menu>
+	   	    <item
+	   	        android:id="@+id/about"
+	   	        android:title="Sobre"
+	   	        android:icon="@drawable/ic_action_about"
+	   	        android:showAsAction="always"/>
 	   	    <item
 	   	        android:id="@+id/settings"
 	   	        android:title="Configurações"
