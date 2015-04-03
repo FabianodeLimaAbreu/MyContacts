@@ -1202,7 +1202,7 @@ containing a value of this type.
         public static final int tab_unselected_pressed_mycontacts=0x7f0200ce;
     }
     public static final class id {
-        public static final int about=0x7f090050;
+        public static final int about=0x7f090051;
         public static final int action_bar=0x7f09001c;
         public static final int action_bar_activity_content=0x7f090001;
         public static final int action_bar_container=0x7f09001b;
@@ -1215,21 +1215,21 @@ containing a value of this type.
         public static final int action_menu_presenter=0x7f090003;
         public static final int action_mode_close_button=0x7f090024;
         public static final int activity_chooser_view_content=0x7f090025;
-        public static final int add_campo=0x7f09004b;
+        public static final int add_campo=0x7f09004c;
         public static final int always=0x7f09000f;
         public static final int beginning=0x7f090016;
         public static final int botao=0x7f090046;
-        public static final int caller=0x7f09004d;
+        public static final int caller=0x7f09004e;
         public static final int checkbox=0x7f09002d;
         public static final int collapseActionView=0x7f090010;
         public static final int default_activity_button=0x7f090028;
-        public static final int deletar=0x7f090053;
-        public static final int delregistro=0x7f09004c;
+        public static final int deletar=0x7f090054;
+        public static final int delregistro=0x7f09004d;
         public static final int dialog=0x7f090014;
         public static final int disableHome=0x7f090009;
         public static final int dropdown=0x7f090015;
         public static final int edit_query=0x7f090030;
-        public static final int editar=0x7f090052;
+        public static final int editar=0x7f090053;
         public static final int email=0x7f090041;
         public static final int emailtipo=0x7f090042;
         public static final int end=0x7f090017;
@@ -1249,16 +1249,17 @@ containing a value of this type.
         public static final int image=0x7f090027;
         public static final int listMode=0x7f090006;
         public static final int list_item=0x7f090029;
-        public static final int lista=0x7f09004a;
-        public static final int map=0x7f09004f;
+        public static final int lista=0x7f09004b;
+        public static final int map=0x7f090050;
         public static final int middle=0x7f090018;
         public static final int name=0x7f090049;
         public static final int never=0x7f090012;
         public static final int nome=0x7f09003e;
         public static final int none=0x7f090019;
         public static final int normal=0x7f090007;
-        public static final int novo=0x7f09004e;
+        public static final int novo=0x7f09004f;
         public static final int operadora=0x7f090040;
+        public static final int phone=0x7f09004a;
         public static final int progress_circular=0x7f090004;
         public static final int progress_horizontal=0x7f090005;
         public static final int radio=0x7f09002f;
@@ -1272,7 +1273,7 @@ containing a value of this type.
         public static final int search_plate=0x7f090036;
         public static final int search_src_text=0x7f090037;
         public static final int search_voice_btn=0x7f09003b;
-        public static final int settings=0x7f090051;
+        public static final int settings=0x7f090052;
         public static final int shortcut=0x7f09002e;
         public static final int showCustom=0x7f09000b;
         public static final int showHome=0x7f09000c;

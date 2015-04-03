@@ -3,8 +3,8 @@ package br.com.mycontacts.lista.modelo;
 import java.io.Serializable;
 
 public class Ligacao implements Serializable{
-	private Long id;
-	private String nome,telefone;
+	private Long id,idContato;
+	private String nome,telefone,foto;
 	
 	@Override
 	public String toString() {
@@ -30,5 +30,21 @@ public class Ligacao implements Serializable{
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+
+	public Long getIdContato() {
+		return idContato;
+	}
+
+	public void setIdContato(Long idContato) {
+		this.idContato = idContato;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 }

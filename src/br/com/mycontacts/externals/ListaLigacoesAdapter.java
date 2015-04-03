@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,12 +55,16 @@ public class ListaLigacoesAdapter extends BaseAdapter{
 		View linha=inflater.inflate(R.layout.linha_listagem, null);
 		
 		TextView name = (TextView) linha.findViewById(R.id.name);
-		name.setText(ligacao.getNome());
+		name.setText(ligacao.getTelefone());
+		
+		TextView phone = (TextView) linha.findViewById(R.id.phone);
+		phone.setText(ligacao.getTelefone());
 		
 		ImageView foto = (ImageView) linha.findViewById(R.id.foto);
 		
-		if(contato.getFoto() != null){
-			Bitmap fotocontato=BitmapFactory.decodeFile(contato.getFoto());
+		if(ligacao.getFoto() != null){
+			Log.i("FOTO", "FOTOTESTE");
+			Bitmap fotocontato=BitmapFactory.decodeFile(ligacao.getFoto());
 			Bitmap fotoreduzida = Bitmap.createScaledBitmap(fotocontato, 150, 150, true);
 			
 			foto.setImageBitmap(fotoreduzida);

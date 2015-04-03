@@ -3,6 +3,8 @@ package br.com.mycontacts.fragments;
 import java.util.List;
 
 import br.com.mycontacts.R;
+import br.com.mycontacts.externals.ListaContatosAdapter;
+import br.com.mycontacts.externals.ListaLigacoesAdapter;
 import br.com.mycontacts.lista.dao.ContatoDAO;
 import br.com.mycontacts.lista.dao.ligacaoDAO;
 import br.com.mycontacts.lista.modelo.Contato;
@@ -65,11 +67,11 @@ public class Fragment2 extends Fragment {
         daoLig.close();
         
         //Aparencia
-        int layout = android.R.layout.simple_list_item_1;
+        //int layout = android.R.layout.simple_list_item_1;
 
         //Transforma as string p/ uma View, quem faz isso é o Adapter
         //Log.i("ADAPTER", ""+ligacoes.get(0));
-        ArrayAdapter<Ligacao> adapterligacoes = new ArrayAdapter<Ligacao>(getActivity(), layout, ligacoes);
+        ListaLigacoesAdapter adapterligacoes = new ListaLigacoesAdapter(ligacoes,this.getActivity());
 
         //Colocando as string dos nomes nas linhas da ListView
         history.setAdapter(adapterligacoes);
