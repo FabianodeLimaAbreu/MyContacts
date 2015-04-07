@@ -5,13 +5,16 @@ import br.com.mycontacts.fragments.Fragment1;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.telephony.TelephonyManager;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.TabListener;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 @SuppressLint("NewApi")
 public class MainActivity extends FragmentActivity {
@@ -20,6 +23,13 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		/*TESTANDO BUSCAR OPERADORA
+		 * LIGAÇÃO EFETUADA NO FRAGMENT1
+		 * TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        String operator = tm.getSimOperatorName();
+		Toast.makeText(this, "OPERADORA: "+ operator, Toast.LENGTH_LONG).show();
+		*/
 		
 		ab=getActionBar();
 		ab.setDisplayHomeAsUpEnabled(true);

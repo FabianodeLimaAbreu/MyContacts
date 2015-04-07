@@ -1,6 +1,7 @@
 package br.com.mycontacts.fragments;
 
 
+import java.text.BreakIterator;
 import java.util.List;
 
 import br.com.mycontacts.Formulario;
@@ -13,12 +14,14 @@ import br.com.mycontacts.lista.modelo.Contato;
 import br.com.mycontacts.lista.modelo.Ligacao;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.SearchView;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -106,12 +109,16 @@ public class Fragment1 extends Fragment {
 			//parametros: Adapter da view. View - Cada item da tela. Posicao - posicao da listview. Id - Toda view tem um ID 
         	@Override
 			public void onItemClick(AdapterView<?> adapter, View view, int posicao, long id) {
+        		
+        		//Log.i("TAG", "ENTROU !");        		
+        		
 				Contato contatoLigar = (Contato) adapter.getItemAtPosition(posicao);
 				Contato registroChamada = (Contato) adapter.getItemAtPosition(posicao);
 				/*Intent Implícita - Chamar todas as activity do aparelho que sabem fazer discagem
 					Para fazer isso precisamos colocar um apelido, no android temos alguns apelidos
 					na classe Intent usando o ACTION_CALL
 				*/
+				
 				Intent irParaTelaDeDiscagem = new Intent(Intent.ACTION_CALL);
 					//Precisamos informar p/ que num queremos ligar.
 					//Precimos colocar a permissão no Manifest para fazer uma ligação
@@ -119,8 +126,6 @@ public class Fragment1 extends Fragment {
 				
 				ligacaoDAO daoLigacao = new ligacaoDAO(getActivity()); 
                 daoLigacao.salva(registroChamada); //Salvando conteúdo
-                
-                
 				
                 irParaTelaDeDiscagem.setData(discarPara);
 						
