@@ -19,18 +19,16 @@ import android.widget.Toast;
 @SuppressLint("NewApi")
 public class MainActivity extends FragmentActivity {
 	private android.app.ActionBar ab;
+	
+	public String operator;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		/*TESTANDO BUSCAR OPERADORA
-		 * LIGAÇÃO EFETUADA NO FRAGMENT1
-		 * TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        String operator = tm.getSimOperatorName();
-		Toast.makeText(this, "OPERADORA: "+ operator, Toast.LENGTH_LONG).show();
-		*/
-		
+		DescobriOperadora();
+	
 		ab=getActionBar();
 		ab.setDisplayHomeAsUpEnabled(true);
 		//Icone da home (logo) vira botao
@@ -68,6 +66,14 @@ public class MainActivity extends FragmentActivity {
 			getActionBar().setSelectedNavigationItem(0);
 		}
 	}
+
+	public void DescobriOperadora() {
+		//TESTANDO BUSCAR OPERADORA
+		//LIGAÇÃO EFETUADA NO FRAGMENT1
+		TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        operator = tm.getSimOperatorName();
+		Toast.makeText(this, "OPERADORA: "+ operator, Toast.LENGTH_LONG).show();
+	}
 	
 	private class NavegacaoTabs implements ActionBar.TabListener{
 		
@@ -80,8 +86,7 @@ public class MainActivity extends FragmentActivity {
 		@Override
 		public void onTabReselected(android.app.ActionBar.Tab tab,
 				android.app.FragmentTransaction ft) {
-			//Ao clicar em uma tab que ja esta selecionada
-			
+			//Ao clicar em uma tab que ja esta selecionada		
 		}
 	
 		@Override
@@ -101,7 +106,6 @@ public class MainActivity extends FragmentActivity {
 			}
 			fts.replace(R.id.fragmentContainer, frag);
 			fts.commit();
-			
 		}
 	
 		@Override
@@ -113,7 +117,6 @@ public class MainActivity extends FragmentActivity {
 			//fts.replace(R.id.fragmentContainer, frag);
 			fts.commit();
 		}
-		
 	}
 
 	@Override

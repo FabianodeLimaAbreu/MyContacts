@@ -35,6 +35,7 @@ import br.com.mycontacts.lista.modelo.Contato;
 	private ContatoDAO dao;
 	private ImageButton botao; 
 	private boolean i;
+	private MainActivity MainActtivity;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +43,6 @@ import br.com.mycontacts.lista.modelo.Contato;
 		//setContentView é o método mais importante da activity.
 		//Ele vincula a Activity Formulario com o layout formulario.xml
 		setContentView(R.layout.formulario);
-		
-		
 		
 		//Para botão de voltar no logo
 		android.app.ActionBar ab=getActionBar();
@@ -60,7 +59,7 @@ import br.com.mycontacts.lista.modelo.Contato;
 		botao = (ImageButton) findViewById(R.id.botao);
 
 		botao.setOnClickListener(new OnClickListener() {
-			
+		
 			@Override
 			public void onClick(View v) {
 				Contato contato = helper.pegaContatoDoFormulario();
